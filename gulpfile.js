@@ -3,7 +3,8 @@ var gulp = require('gulp');
 var PATHS = {
     src: {
         js: 'src/**/*.ts',
-        html: 'src/**/*.html'
+        html: 'src/**/*.html',
+        css: 'src/**/*.css'
     },
     lib: [
         'node_modules/angular2/node_modules/traceur/bin/traceur-runtime.js',
@@ -36,11 +37,15 @@ gulp.task('html', function () {
     return gulp.src(PATHS.src.html).pipe(gulp.dest('dist'));
 });
 
+gulp.task('css', function () {
+    return gulp.src(PATHS.src.css).pipe(gulp.dest('dist'));
+});
+
 gulp.task('libs', function () {
     return gulp.src(PATHS.lib).pipe(gulp.dest('dist/lib'));
 });
 
-gulp.task('play', ['libs', 'html', 'js'], function () {
+gulp.task('play', ['libs', 'html', 'js', 'css'], function () {
     var http = require('http');
     var connect = require('connect');
     var serveStatic = require('serve-static');
@@ -50,6 +55,7 @@ gulp.task('play', ['libs', 'html', 'js'], function () {
 
     gulp.watch(PATHS.src.html, ['html']);
     gulp.watch(PATHS.src.js, ['js']);
+    gulp.watch(PATHS.src.css, ['css']);
 
     app = connect().use(serveStatic(__dirname + '/dist'));  // serve everything that is static
     http.createServer(app).listen(port, function () {
