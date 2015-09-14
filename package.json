@@ -1,15 +1,15 @@
 {
-  "name": "ng2-play.ts",
-  "version": "1.0.0-SNAPSHOT",
-  "description": "A minimal Angular2 playground using TypeScript",
+  "name": "angular2-ot-site",
+  "version": "1.0.0",
+  "description": "ot-site example",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pkozlowski-opensource/ng2-play.ts.git"
+    "url": "git+https://github.com/kara/angular2-ot-site.git"
   },
   "bugs": {
-    "url": "https://github.com/pkozlowski-opensource/ng2-play.ts/issues"
+    "url": "https://github.com/kara/angular2-ot-site/issues"
   },
-  "homepage": "https://github.com/pkozlowski-opensource/ng2-play.ts#readme",
+  "homepage": "https://github.com/kara/angular2-ot-site#readme",
   "devDependencies": {
     "connect": "^3.4.0",
     "del": "^1.2.0",
