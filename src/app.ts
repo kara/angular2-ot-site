@@ -1,14 +1,18 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
-import {OtModal} from 'ot-modal';
+import {OtSite} from 'ot-site';
 
 @Component({
   selector: 'app'
 })
 @View({
   template: `
-    <ot-modal></ot-modal>
+   <ot-site>
+      <div head>I render in head.</div>
+      <div menu>I render in menu.</div>
+      <div body>I render in body.</div>
+   </ot-site>
   `,
-  directives: [OtModal]
+  directives: [OtSite]
 })
 export class App {
 
